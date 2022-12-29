@@ -102,5 +102,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: NETGEAR-BZV
+        name: k2p
         path: /opt/images
