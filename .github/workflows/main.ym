@@ -1,4 +1,4 @@
-name: K2P-USB-20221019
+name: JDC
 
 on: 
   release:
@@ -37,7 +37,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P-USB
+        TNAME: JDC
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -128,5 +128,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: K2P-USB
+        name: JDC
         path: /opt/images
