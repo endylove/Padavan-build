@@ -1,4 +1,4 @@
-name: NETGEAR-BZV
+name: K2P
 
 on: 
   release:
@@ -37,7 +37,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: NETGEAR-BZV
+        TNAME: K2P
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -66,7 +66,7 @@ jobs:
         ##科学上网##
 
         ##广告管理##
-        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config #adbyby plus+
+        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
         echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config #KP广告过滤
         ##广告管理##
 
@@ -81,8 +81,8 @@ jobs:
         ##音乐解锁##
 
         ##内网穿透服务##
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
+        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
+        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config #wireguard ~10k
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config #frpc
         ##内网穿透服务##
